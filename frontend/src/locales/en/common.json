@@ -1,0 +1,20 @@
+{
+  "site_title": "Crypto Search",
+  "top_100_market_cap": "Top 100 Cryptocurrency by Market Cap",
+  "total_market_cap": "Total Market Cap",
+  "24h_trading_volume": "24h Trading Volume",
+  "trending_coin": "🔥 Trending Coin",
+  "top_gainers": "🚀 Top Gainers",
+  "coin": "Coin",
+  "price": "Price",
+  "24h_change": "24h Change",
+  "24h_volume": "24h Volume",
+  "market_cap": "Market Cap",
+  "enter_the_keyword": "Enter the keyword",
+  "last_7_days": "Last 7 Days",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "circulating_supply": "Circulating Supply",
+  "total_supply": "Total Supply",
+  "max_supply": "Max Supply"
+}

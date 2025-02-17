@@ -1,0 +1,26 @@
+[
+    {
+      "top_gainers": [
+        {
+          "id": "bonk",
+          "symbol": "bonk", 
+          "name": "Bonk",
+          "image": "https://assets.coingecko.com/coins/images/28600/original/bonk.jpg?1696527587",
+          "market_cap_rank": 75,
+          "usd": 0.000024645873833743,
+          "usd_24h_vol": 105344205.633894,
+          "usd_1y_change": 4244.15510979623
+        },
+        {
+          "id": "0x0-ai-ai-smart-contract",
+          "symbol": "0x0",
+          "name": "0x0.ai: AI Smart Contract", 
+          "image": "https://assets.coingecko.com/coins/images/28880/original/0x0.png?1696527857",
+          "market_cap_rank": 235,
+          "usd": 0.388236182838391,
+          "usd_24h_vol": 1608196.56989005,
+          "usd_1y_change": 3688.24996780839
+        }
+      ]
+    }
+]
