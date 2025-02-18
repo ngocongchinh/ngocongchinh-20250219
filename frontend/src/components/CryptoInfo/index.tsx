@@ -51,7 +51,7 @@ const CryptoInfo: React.FC<{ coinId: string | string[] }> = ({ coinId }) => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>Market Cap</TableCell>
               <TableCell sx={{ pr: 0 }} align="right">
-                ${coinDetail.market_data.market_cap.usd.toLocaleString()}
+                <Box sx={{ fontWeight: 'bold' }}> ${coinDetail.market_data.market_cap.usd.toLocaleString()}</Box>
               </TableCell>
             </TableRow>
           )}
@@ -59,7 +59,7 @@ const CryptoInfo: React.FC<{ coinId: string | string[] }> = ({ coinId }) => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>{t('24h_trading_volume')}</TableCell>
               <TableCell sx={{ pr: 0 }} align="right">
-                ${coinDetail?.market_data?.total_volume?.usd.toLocaleString()}
+                <Box sx={{ fontWeight: 'bold' }}>${coinDetail?.market_data?.total_volume?.usd.toLocaleString()}</Box>
               </TableCell>
             </TableRow>
           )}
@@ -67,7 +67,7 @@ const CryptoInfo: React.FC<{ coinId: string | string[] }> = ({ coinId }) => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>{t('circulating_supply')}</TableCell>
               <TableCell sx={{ pr: 0 }} align="right">
-                ${coinDetail.market_data.circulating_supply.toLocaleString()}
+                <Box sx={{ fontWeight: 'bold' }}>${coinDetail.market_data.circulating_supply.toLocaleString()}</Box>
               </TableCell>
             </TableRow>
           )}
@@ -75,7 +75,7 @@ const CryptoInfo: React.FC<{ coinId: string | string[] }> = ({ coinId }) => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>{t('total_supply')}</TableCell>
               <TableCell sx={{ pr: 0 }} align="right">
-                ${coinDetail.market_data.total_supply.toLocaleString()}
+                <Box sx={{ fontWeight: 'bold' }}>${coinDetail.market_data.total_supply.toLocaleString()}</Box>
               </TableCell>
             </TableRow>
           )}
@@ -83,7 +83,7 @@ const CryptoInfo: React.FC<{ coinId: string | string[] }> = ({ coinId }) => {
             <TableRow>
               <TableCell sx={{ pl: 0 }}>{t('max_supply')}</TableCell>
               <TableCell sx={{ pr: 0 }} align="right">
-                ${coinDetail.market_data.max_supply.toLocaleString()}
+                <Box sx={{ fontWeight: 'bold' }}>${coinDetail.market_data.max_supply.toLocaleString()}</Box>
               </TableCell>
             </TableRow>
           )}
