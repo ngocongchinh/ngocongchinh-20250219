@@ -27,7 +27,6 @@ interface IPriceChart {
 const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
   const [options, setOptions] = useState<Highcharts.Options | null>(null);
   const [isLoading, setLoading] = useState(true);
-  const [lineColor, setLineColor] = useState('var(--color-up)');
 
   const dispatch = useAppDispatch();
   const marketChart: IMarketChartData = useMarketChart();
@@ -64,8 +63,7 @@ const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
 
       const firstPrice = marketChart?.prices[0][1];
       const lastPrice = marketChart?.prices[marketChart?.prices.length - 1][1];
-
-      setLineColor(lastPrice >= firstPrice ? 'var(--color-up)' : 'var(--color-down)');
+      const lineColor = lastPrice >= firstPrice ? 'var(--color-up)' : 'var(--color-down)';
 
       loadHighchartsModules(async () => {
         const options: Highcharts.Options = {
