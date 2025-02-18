@@ -18,7 +18,11 @@ export const getOhlcChart = createCallApiAsyncAction('crypto/ohlcChart', getOhlc
 export const ohlcSlice = createSlice({
   name: 'ohlc',
   initialState,
-  reducers: {},
+  reducers: {
+    resetOhlcChart: () => ({
+      ...initialState,
+    }),
+  },
   extraReducers(builder) {
     builder.addCase(getOhlcChart.pending, (state) => ({
       ...state,
@@ -40,5 +44,8 @@ export const ohlcSlice = createSlice({
     }));
   },
 });
+
+// Actions
+export const { resetOhlcChart } = ohlcSlice.actions;
 
 export const ohlcReducer = ohlcSlice.reducer;

@@ -5,6 +5,7 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import { useAppDispatch } from 'states';
 import { getCoinMarketChart, useMarketChart } from 'states/marketChart';
+import { resetOhlcChart } from 'states/ohlc';
 import { useCoinDetail } from 'states/coinDetail';
 import { formatNumberShort } from 'utils/number';
 import { IMarketChartData, IMarketDataPoint, ICoinDetail, TimeRange } from 'types';
@@ -48,6 +49,7 @@ const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
         },
       };
       fetchPriceChart(filter);
+      dispatch(resetOhlcChart());
     }
   }, [timeRange, coinId, fetchPriceChart]);
 

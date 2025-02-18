@@ -4,6 +4,7 @@ import { getGlobalApi, getMarketCoinApi } from 'apis/crypto';
 import { ICoinMarketData, IGlobalMarketData } from 'types';
 export interface ICryptoState {
   loading: boolean | null;
+  loadingMarket: boolean | null;
   error: string | null;
   global: IGlobalMarketData | null;
   market: ICoinMarketData[] | null;
@@ -11,6 +12,7 @@ export interface ICryptoState {
 
 export const initialState: ICryptoState = {
   loading: false,
+  loadingMarket: false,
   error: null,
   global: null,
   market: null,
@@ -44,19 +46,19 @@ export const cryptoSlice = createSlice({
     }));
     builder.addCase(getMarket.pending, (state) => ({
       ...state,
-      loading: true,
+      loadingMarket: true,
       error: null,
       market: null,
     }));
     builder.addCase(getMarket.fulfilled, (state: any, action) => ({
       ...state,
-      loading: false,
+      loadingMarket: false,
       error: null,
       market: action.payload,
     }));
     builder.addCase(getMarket.rejected, (state, action: PayloadAction<any>) => ({
       ...state,
-      loading: false,
+      loadingMarket: false,
       market: null,
       error: action.payload?.error || null,
     }));
