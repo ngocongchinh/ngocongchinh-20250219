@@ -27,6 +27,8 @@ interface IPriceChart {
 const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
   const [options, setOptions] = useState<Highcharts.Options | null>(null);
   const [isLoading, setLoading] = useState(true);
+  const [lineColor, setLineColor] = useState('var(--color-up)');
+
   const dispatch = useAppDispatch();
   const marketChart: IMarketChartData = useMarketChart();
   const coinDetail: ICoinDetail = useCoinDetail();
@@ -51,7 +53,7 @@ const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
       fetchPriceChart(filter);
       dispatch(resetOhlcChart());
     }
-  }, [timeRange, coinId, fetchPriceChart]);
+  }, [timeRange, coinId, fetchPriceChart, dispatch]);
 
   useEffect(() => {
     if (marketChart?.prices) {
@@ -59,6 +61,11 @@ const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
         point[0], // Timestamp
         point[1], // Price
       ]);
+
+      const firstPrice = marketChart?.prices[0][1];
+      const lastPrice = marketChart?.prices[marketChart?.prices.length - 1][1];
+
+      setLineColor(lastPrice >= firstPrice ? 'var(--color-up)' : 'var(--color-down)');
 
       loadHighchartsModules(async () => {
         const options: Highcharts.Options = {
@@ -83,7 +90,7 @@ const PriceChart: React.FC<IPriceChart> = ({ coinId, timeRange }) => {
           exporting: { enabled: false },
           series: [
             {
-              color: '#ffbf00',
+              color: lineColor,
               type: 'line',
               name: `${coinDetail?.symbol?.toUpperCase()}/USD`,
               data: formattedData,
