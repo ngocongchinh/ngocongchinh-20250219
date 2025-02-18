@@ -1,6 +1,6 @@
 ## Test Question No. 1
 
-Crypto Search is a project built on [Nextjs](https://nextjs.org/) for the frontend site and [Nest](https://nestjs.com/) for the backend.
+Crypto Search is a project built on [Nextjs](https://nextjs.org/) for the frontend site and [Nestjs](https://nestjs.com/) for the backend.
 
 ### Run project with [Docker](https://www.docker.com/)
 
@@ -12,12 +12,12 @@ docker-compose up --build
 
 ### Run project without Docker
 
-- [How to install the front-end site](https://nextjs.org/)
-- [How to install the backend](https://nestjs.com/)
+- [How to install the front-end site](https://github.com/ngocongchinh/ngocongchinh-20250219/tree/main/frontend)
+- [How to install the backend](https://github.com/ngocongchinh/ngocongchinh-20250219/tree/main/backend)
 
 ## Test Question No. 2
 
-The Stock Profit Calculation Function is written in the file `/src/utils/calculateMaxProfit.ts.`
+The Stock Profit Calculation Function is written in the file [`/src/utils/calculateMaxProfit.ts.`](https://github.com/ngocongchinh/ngocongchinh-20250219/tree/main/backend/src/utils)
 
 ```bash
 # how to use
